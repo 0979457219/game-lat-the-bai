@@ -1,0 +1,114 @@
+    * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+    }
+
+    .clear {
+      clear: both;
+    }
+
+    body {
+        height: 100vh;
+    }
+    
+    .game {
+    background: #847077;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    height: 100%;
+    width: 100%;
+    color: #fff;
+    text-align: center;
+  }
+  
+  h1 {
+    font-family: "Arial", sans-serif;
+    font-weight: 100;
+    font-size: 2.6em;
+    text-transform: uppercase; /* in hoa */
+    padding: 36px;
+  }
+  
+  h3 {
+    font-family: "Arial", sans-serif;
+    font-weight: 100;
+    font-size: 1.4em;
+    text-transform: uppercase;
+    padding: 36px;
+  }
+
+  #container {
+    width: 630px;
+    min-height: 200px;
+    margin: 10px auto;
+    background-color: #8b5d6d;
+  }
+  #container:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  [data-view=card] {
+    transform: rotateY(0deg);
+    width: 100px;
+    height: 150px;
+    border: solid 1px #d3cece;
+    border-radius: 10px;
+    box-shadow: -4px 4px 8px black;
+    float: left;
+    margin: 10px;
+    cursor: pointer;
+    background: url(./img/back.svg) top center / cover no-repeat;
+    
+
+  }
+
+  .choose {
+    transition: 0.6s;
+    transform-style: preserve-3d;
+    position: relative;
+    transform: rotateY(180deg);
+  }
+  
+  .default {
+    transition: 0.6s;
+    transform-style: preserve-3d;
+    position: relative;
+    transform: rotateY(0deg);
+  }
+  
+  .correct {
+    box-shadow: none;
+    cursor: default;
+    transition: 0.6s;
+    transform-style: preserve-3d;
+    position: relative;
+    transform: rotateY(180deg);
+  }
+  
+
+  /* Hình */
+  .correct[data-item=i1],
+  .choose[data-item=i1] {
+    background: url(./img/img1.svg) top center / cover no-repeat;
+    
+  }
+  
+  .correct[data-item=i2],
+  .choose[data-item=i2] {
+    background: url(./img/img2.svg) top center / cover no-repeat;
+    
+  }
+  
+  .correct[data-item=i3],
+  .choose[data-item=i3] {
+    background: url(./img/img3.svg) top center / cover no-repeat;
+    
+  }
+  
+  .correct[data-item=i4],
+  .choose[data-item=i4] {
+    background: url(./img/img4.svg) top center / cover no-repeat;
+    
+  }
