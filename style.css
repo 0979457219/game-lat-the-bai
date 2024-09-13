@@ -4,6 +4,10 @@
         margin: 0;
     }
 
+    .hide{
+      display: none;
+    }
+    
     .clear {
       clear: both;
     }
@@ -13,35 +17,74 @@
     }
     
     .game {
-    background: #847077;
+    background: #ffffff;
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     height: 100%;
     width: 100%;
-    color: #fff;
+    color: #ffffff;
     text-align: center;
   }
   
-  h1 {
+  h4 {
     font-family: "Arial", sans-serif;
-    font-weight: 100;
-    font-size: 2.6em;
-    text-transform: uppercase; /* in hoa */
-    padding: 36px;
+    
   }
   
-  h3 {
-    font-family: "Arial", sans-serif;
-    font-weight: 100;
-    font-size: 1.4em;
-    text-transform: uppercase;
-    padding: 36px;
+  
+
+  .header {
+    height: 52px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    box-shadow: 1px 1px 5px rgb(26, 26, 26);
+
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    z-index: 1;
   }
 
+  .header-logo {
+    width: 36px;
+    margin: 8px 16px;
+    display: block;
+    
+}
+
+.header-desc {
+  color: #000000;
+  display: inline-block;
+  line-height: 52px;
+ 
+}
+
+.header .name {
+  text-transform: uppercase;
+  line-height: 52px;
+  color: #000000;
+  position: absolute; 
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+}
+
+  
+  
+
   #container {
-    width: 630px;
+    
+    width: 520px;
     min-height: 200px;
-    margin: 10px auto;
-    background-color: #8b5d6d;
+    margin: 100px auto;
+    background-color: #e4f5fc;
+    border-radius: 10px;
+    box-shadow: -4px 4px 8px black;
+    padding: 20px;
+    
+    
   }
   #container:after {
     content: "";
@@ -53,7 +96,7 @@
     transform: rotateY(0deg);
     width: 100px;
     height: 150px;
-    border: solid 1px #d3cece;
+    border: solid 1px #c4f2ff;
     border-radius: 10px;
     box-shadow: -4px 4px 8px black;
     float: left;
@@ -79,6 +122,7 @@
   }
   
   .correct {
+    opacity: 0.8;
     box-shadow: none;
     cursor: default;
     transition: 0.6s;
@@ -112,3 +156,16 @@
     background: url(./img/img4.svg) top center / cover no-repeat;
     
   }
+
+  .correct[data-item=i5],
+  .choose[data-item=i5] {
+    background: url(./img/img5.svg) top center / cover no-repeat;
+    
+  }
+  
+  .correct[data-item=i6],
+  .choose[data-item=i6] {
+    background: url(./img/img6.svg) top center / cover no-repeat;
+    
+  }
+

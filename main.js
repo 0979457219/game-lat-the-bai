@@ -1,7 +1,7 @@
 var js_container = document.getElementById('container')
 
-var images = ['i1', 'i2', 'i3', 'i4'];
-
+var images = ['i1', 'i2', 'i3', 'i4', 'i5', 'i6'];
+var count_cr = 0
 var clone = images
 var cards = images.concat(clone)
 console.log(cards)
@@ -35,38 +35,33 @@ for (var i = 0; i < cards.length; i++) {
     var x = []
     var resultsArray = []
 
-    card.onclick = function () {
-   
-        if (this.className != 'choose' && this.className != 'correct')
-        {
-            this.className = 'choose';
-            var result = this.dataset.item;
-            resultsArray.push(result);
-
-            
-            
-        }
-      
-        if (resultsArray.length >= 2)
-        {
-    
-            if (resultsArray[0] === resultsArray[1])
-            {
-            checkcr("correct", resultsArray[0]);
-            resultsArray.splice(0, 2);
-            }
-            
-            else
-            {
-            checkf("default", resultsArray[0], resultsArray[1]);
-            resultsArray.splice(0, 2);
-          }
-          
-        }
-        
-      }
+    card.addEventListener('click', Card_Click);
 
 }
+
+function Card_Click() {
+    if (this.className !== 'choose' && this.className !== 'correct') {
+        this.className = 'choose';
+        const result = this.dataset.item;
+        resultsArray.push(result);
+
+        if (resultsArray.length >= 2) {
+            if (resultsArray[0] === resultsArray[1]) {
+                checkcr("correct", resultsArray[0]);
+                count_cr++
+            } else {
+                checkf("default", resultsArray[0], resultsArray[1]);
+            }
+            resultsArray.splice(0, 2);
+
+            if(count_cr === images.length) {
+                alert("Win");
+            }
+                
+        }
+    }
+}
+
 
 var checkcr = function(newClassName, y) {
     var ys = document.querySelectorAll('[data-item=' + y + ']');
@@ -87,6 +82,8 @@ var checkcr = function(newClassName, y) {
     },500);
      
   }
+
+    
 
 
 
