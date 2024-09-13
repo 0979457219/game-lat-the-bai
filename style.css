@@ -71,11 +71,31 @@
   transform: translate(-50%, -50%); 
 }
 
+.header_reload {
+  position: absolute;
+  right: 20px;
+  border-radius: 10px;
+  border: 2px solid rgb(147, 147, 147);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 32px;
+  width: 90px;
+  margin: 10px 30px;
+  transition: border-color .2s ease-in-out;
+  color: #000000;
+  cursor: pointer;
+}
+
+.header_reload:hover {
+  background-color: #1b1b1b;
+  color: #ffffff;
+}
+
   
   
 
   #container {
-    
     width: 520px;
     min-height: 200px;
     margin: 100px auto;
@@ -83,14 +103,14 @@
     border-radius: 10px;
     box-shadow: -4px 4px 8px black;
     padding: 20px;
-    
-    
   }
   #container:after {
     content: "";
     display: table;
     clear: both;
   }
+
+
 
   [data-view=card] {
     transform: rotateY(0deg);

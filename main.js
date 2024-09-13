@@ -55,7 +55,10 @@ function Card_Click() {
             resultsArray.splice(0, 2);
 
             if(count_cr === images.length) {
-                alert("Win");
+                setTimeout( function () {
+                    alert("Win")
+                }, 1000);
+                
             }
                 
         }
@@ -83,7 +86,12 @@ var checkcr = function(newClassName, y) {
      
   }
 
-    
+
+  var reload = document.getElementById("js_reload")
+  var fun_reload = function () {
+    location.reload();
+  };
+  reload.addEventListener("click", fun_reload)
 
 
 
